@@ -1,5 +1,5 @@
 # Welcome to travelAdvisor 👋
-[Live Preview]  (urban-explore.vercel.app)
+[Live Preview]  ([urban-explore.vercel.app](https://vercel.com/wankhede1752003-gmailcoms-projects/urban-explore))
 
 
 
