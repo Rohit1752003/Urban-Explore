@@ -1,0 +1,163 @@
+/* ---------- ROOT ---------- */
+.intro {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: black;
+  font-family: "Inter", system-ui, sans-serif;
+  transition: opacity 1.2s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* ---------- CITY (FULL SCREEN) ---------- */
+.city {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center bottom;
+  filter: brightness(0.35) saturate(1.1);
+  z-index: 0;
+}
+
+/* ---------- SKY OVERLAY ---------- */
+.sky-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 7, 18, 0.95) 0%,
+    rgba(3, 7, 18, 0.7) 35%,
+    rgba(3, 7, 18, 0.4) 65%,
+    rgba(3, 7, 18, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+/* ---------- STARS ---------- */
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, white, transparent),
+    radial-gradient(1px 1px at 40% 70%, white, transparent),
+    radial-gradient(1px 1px at 65% 25%, white, transparent),
+    radial-gradient(1px 1px at 85% 60%, white, transparent),
+    radial-gradient(1px 1px at 55% 15%, white, transparent);
+  opacity: 0.4;
+  z-index: 2;
+}
+
+/* ---------- PLANE ---------- */
+.plane {
+  position: absolute;
+  top: 22%;
+  left: -140px;
+  width: 140px;
+  animation: plane-fly 14s linear forwards;
+  z-index: 5;
+}
+
+@keyframes plane-fly {
+  to {
+    left: calc(100% + 200px);
+  }
+}
+
+/* ---------- TITLE ---------- */
+.title {
+  position: absolute;
+  top: 32%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  z-index: 6;
+}
+
+.letter {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 800;
+  color: white;
+  opacity: 0;
+  transform: translateY(-140px);
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease;
+  text-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.letter.dropped {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.space {
+  width: 24px;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  position: absolute;
+  bottom: 12%;
+  width: 100%;
+  text-align: center;
+  z-index: 7;
+  animation: fadeUp 1s ease forwards;
+}
+
+.cta p {
+  color: #e5e7eb;
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.cta button {
+  background: white;
+  color: black;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cta button:hover {
+  background: #111827;
+  color: white;
+}
+
+/* ---------- SKIP ---------- */
+.skip {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.skip:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- ANIM ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
