@@ -1,13 +1,15 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
-import { Home, HotelsList, MapView, RestaurantsList, AttractionsList, SearchResult } from "./pages";
-import { PlaceDetails } from "./pages/templates";
+import { Switch, Route } from "react-router-dom"
+import { Home, HotelsList, MapView, RestaurantsList, AttractionsList, SearchResult, UrbanExplore } from "./pages"
+import { PlaceDetails } from "./pages/templates"
 
 const App = () => {
   return (
     <>
       <Switch>
         <Route exact path={"/"}>
+          <UrbanExplore />
+        </Route>
+        <Route exact path={"/home"}>
           <Home />
         </Route>
         <Route path={"/map"}>
